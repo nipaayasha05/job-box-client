@@ -1,7 +1,19 @@
-import React from "react";
+import React, { Suspense } from "react";
+import Banner from "./Banner";
+import HotJobs from "../HotJobs";
 
 const Home = () => {
-  return <div>This is home</div>;
+  const jobsPromise = fetch("http://localhost:3000/jobs").then((res) =>
+    res.json()
+  );
+  return (
+    <div>
+      <Banner></Banner>
+      <Suspense fallback={`loading hot jobs`}>
+        <HotJobs jobsPromise={jobsPromise}></HotJobs>
+      </Suspense>
+    </div>
+  );
 };
 
 export default Home;

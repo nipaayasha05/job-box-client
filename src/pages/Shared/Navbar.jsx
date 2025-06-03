@@ -16,7 +16,29 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <NavLink to="/">Home</NavLink>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      {/* for applicant links */}
+      {user && (
+        <>
+          <li>
+            <NavLink to="/myApplications">My Applications</NavLink>
+          </li>
+        </>
+      )}
+
+      {/* for recruiter.check roll as well */}
+      {user && (
+        <>
+          <li>
+            <NavLink to="/addJob">Add Job</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myPostedJobs">My Posted Jobs</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
