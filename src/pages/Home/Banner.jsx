@@ -35,7 +35,7 @@ const Banner = () => {
             }}
             className="text-5xl font-bold"
           >
-            Box Office News!
+            Box Office News ertftfrtfrdtferfe!
           </motion.h1>
           {/* <motion.h1
             initial={{ scale: -1 }}
